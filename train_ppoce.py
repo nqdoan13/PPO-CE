@@ -107,7 +107,7 @@ def compute_gae(
     return np.array(advantages, dtype=np.float32), np.array(returns, dtype=np.float32)
 
 
-def ppo_train(args):
+def ppoce_train(args):
     set_seed(args.seed)
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -352,4 +352,4 @@ def parse_args():
 
 
 if __name__ == "__main__":
-    ppo_train(parse_args())
+    ppoce_train(parse_args())
